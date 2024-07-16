@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Matcher</title>
+    <style>
+        body
+        {
+            justify-content: center;
+            display: flex;
+            background-color: #e28d8d;
+        }
+        .container
+        {
+            margin: 100px 300px 0px 300px;
+            border: solid 3px rgb(15, 15, 15);
+        }
+
+        .app-heading{
+            text-align: center;
+            font: 300px;
+            font-style: italic;
+            color: #ff0066;
+        }
+        .text-container{
+            display: flex;
+            justify-content: space-around;
+        }
+        .input-text{
+            width: 350px;
+            height:80px;
+            background-color: rgb(192, 231, 197);
+            color: rgb(18, 7, 7);
+            border-radius: 5px;
+        }
+        .match-result{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1 class="app-heading">Text matcher</h1>
+    <div class="text-container">
+            <input type="text" class="input-text" onkeyup="comparetext()" id="input-1">
+            <input type="text" class="input-text" onkeyup="comparetext()" id="input-2">
+    </div>
+    <p class="match-result" id="match-result"></p>
+    </div>
+    <script>
+        function comparetext(){
+            const input1Element=document.getElementById("input-1")
+            const input2Element=document.getElementById("input-2")
+            const resultElement=document.getElementById("match-result")
+
+            if(input1Element.value== input2Element.value)
+            {
+                resultElement.innerText=" Text Match"
+            }
+            else
+            {
+                resultElement.innerText=" Text Doesn't Match"   
+            }
+        }
+    </script>
+</body>
+</html>
